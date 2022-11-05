@@ -9,13 +9,13 @@ One thing you need to know that, I make this project **just for learning and und
 ## 📄 Library Docs
 > Still on progress... 😶‍🌫️
 ### Classification
- - [] Logistic Regression
- - [] Naive Bayes
+ - [ ] Logistic Regression
+ - [ ] Naive Bayes
  - [x] K-Nearest Neighbors (KNN) - *06 Nov, 2022*
- - [] Decision Tree
- - [] Support Vector Machine (SVM)
- - [] Random Forest
- - [] Softmax Regression
+ - [ ] Decision Tree
+ - [ ] Support Vector Machine (SVM)
+ - [ ] Random Forest
+ - [ ] Softmax Regression
 
 ### Regression
 - [ ] Linear Regression
