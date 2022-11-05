@@ -11,40 +11,40 @@ One thing you need to know that, I make this project **just for learning and und
 ### Classification
  - [] Logistic Regression
  - [] Naive Bayes
- - [x] K-Nearest Neighbors (KNN)
+ - [x] K-Nearest Neighbors (KNN) - *06 Nov, 2022*
  - [] Decision Tree
  - [] Support Vector Machine (SVM)
  - [] Random Forest
  - [] Softmax Regression
 
 ### Regression
-- [] Linear Regression
-- [] Ridge Regression
-- [] Lasso Regression
-- [] Decision Tree for Regression
-- [] Random Forest for Regression
-- [] K-Nearest Neighbors for Regression
-- [] Support Vector Regression
-- [] Gaussian Regression
-- [] Polynomial Regression
+- [ ] Linear Regression
+- [ ] Ridge Regression
+- [ ] Lasso Regression
+- [ ] Decision Tree for Regression
+- [ ] Random Forest for Regression
+- [ ] K-Nearest Neighbors for Regression
+- [ ] Support Vector Regression
+- [ ] Gaussian Regression
+- [ ] Polynomial Regression
 
 ### Clustering
-- [] K-Means
-- [] DBSCAN
-- [] Mean Shift
-- [] OPTICS
-- [] Spectral Clustering
-- [] Mixture of Gaussians
-- [] Affinity Propagation
-- [] Agglomerative Clustering
-- [] BIRCH
+- [ ] K-Means
+- [ ] DBSCAN
+- [ ] Mean Shift
+- [ ] OPTICS
+- [ ] Spectral Clustering
+- [ ] Mixture of Gaussians
+- [ ] Affinity Propagation
+- [ ] Agglomerative Clustering
+- [ ] BIRCH
 
 ### Dimensionality reduction
-- [x] Principal Components Analysis (PCA)
-- [] Factor Analysis (FA)
-- [] Linear Discriminant Analysis (LDA)
-- [] Truncated SVD
-- [] Kernel PCA
-- [] t-Distributed Stochastic Neighbor Embedding (t-SNE)
-- [] Multidimensional Scaling (MDS)
-- [] Isomap
+- [x] Principal Components Analysis (PCA) - *06 Nov, 2022*
+- [ ] Factor Analysis (FA)
+- [ ] Linear Discriminant Analysis (LDA)
+- [ ] Truncated SVD
+- [ ] Kernel PCA
+- [ ] t-Distributed Stochastic Neighbor Embedding (t-SNE)
+- [ ] Multidimensional Scaling (MDS)
+- [ ] Isomap
