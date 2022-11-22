@@ -18,7 +18,7 @@ One thing you need to know that, I make this project **just for learning and und
  - [ ] Softmax Regression
 
 ### Regression
-- [ ] Linear Regression
+- [x] Linear Regression
 - [ ] Ridge Regression
 - [ ] Lasso Regression
 - [ ] Decision Tree for Regression
