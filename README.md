@@ -18,7 +18,8 @@ One thing you need to know that, I make this project **just for learning and und
  - [ ] Softmax Regression
 
 ### Regression
-- [ ] Linear Regression
+- [x] Linear Regression
+    - *22 Nov, 2022*: Update fit and predict method, intercept and coefficient attribute
 - [ ] Ridge Regression
 - [ ] Lasso Regression
 - [ ] Decision Tree for Regression
