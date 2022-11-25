@@ -20,6 +20,7 @@ One thing you need to know that, I make this project **just for learning and und
 ### Regression
 - [x] Linear Regression
     - *22 Nov, 2022*: Update fit and predict method, intercept and coefficient attribute
+    - *25 Nov, 2022*: Update the score method, rank_ attribute, change names of attribute
 - [ ] Ridge Regression
 - [ ] Lasso Regression
 - [ ] Decision Tree for Regression
