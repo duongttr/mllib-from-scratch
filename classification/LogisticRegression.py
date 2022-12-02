@@ -52,13 +52,14 @@ class LogisticRegression:
             dy_loss : np.ndarray
                 derivation of loss vector
         """
+        len_arr = len(y)
         epsilon = 1e-9
         pos_y_pred = y_pred+epsilon
         neg_y_pred = 1-y_pred+epsilon
         loss = -(y*(np.log(pos_y_pred) + (1-y)*np.log(neg_y_pred)))
-        mean_loss = sum(loss) / self.batch
+        mean_loss = sum(loss) / len_arr
 
-        dy_loss = -(y/pos_y_pred - (1-y)/(neg_y_pred)) / self.batch
+        dy_loss = -(y/pos_y_pred - (1-y)/(neg_y_pred)) / len_arr
         return mean_loss, dy_loss
 
     def __shuffle(self, X: np.ndarray, y: np.ndarray, shape: int) -> tuple[np.ndarray, np.ndarray]:
@@ -103,16 +104,17 @@ class LogisticRegression:
         min_loss = float('inf')
         for _ in range(epoch):
             X, y = self.__shuffle(X, y, height)
+            loss_in_1batch = []
             for ith_batch in range(0, height, batch):
                 _, y_pred, dW, dy_pred = self.__calculate(X[ith_batch:ith_batch+batch, :])
                 loss, dy_loss = self.__binary_cross_entropy(y[ith_batch:ith_batch+batch, :], y_pred)
 
-                loss_history.append(loss)
-
+                loss_in_1batch.append(loss)
                 grad = dy_loss*dy_pred*dW
                 grad_mean = np.mean(grad, axis=0, keepdims=True).T
                 self.theta -= learning_rate*grad_mean
-                
+            loss = sum(loss_in_1batch) / len(loss_in_1batch)
+            loss_history.append(loss)
             if loss_history[-1] < min_loss:
                 best_theta = self.theta
                 min_loss = loss_history[-1]
