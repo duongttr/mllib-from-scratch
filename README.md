@@ -6,6 +6,7 @@ In this project, I will "re-built from scratch" state-of-the-art algorithms in M
 
 One thing you need to know that, I make this project **just for learning and understanding algorithms deeply**, not suitable to apply in real-world problems. I still recommend using many other SOTA libraries for building models.
 
+
 ## 👤 Contributors
 **I would like to express my sincere thanks to the these wonderful people who have contributed to this library with me:**
 
@@ -13,48 +14,55 @@ One thing you need to know that, I make this project **just for learning and und
   <img src="https://contrib.rocks/image?repo=AI-Coffee/mllib-from-scratch" />
 </a>
 
-## 📖 Changelogs
 
-### Classification
- - [ ] Logistic Regression
- - [ ] Naive Bayes
- - [x] **K-Nearest Neighbors (KNN)**
-    - *06 Nov, 2022*: Initialize naive algorithm for KNN.
- - [ ] Decision Tree
- - [ ] Support Vector Machine (SVM)
- - [ ] Random Forest
- - [ ] Softmax Regression
+## 📝 TODO Lists
 
-### Regression
-- [x] **Linear Regression**
-    - *22 Nov, 2022*: Update fit and predict method, intercept and coefficient attribute
-- [ ] Ridge Regression
-- [ ] Lasso Regression
-- [ ] Decision Tree for Regression
-- [ ] Random Forest for Regression
-- [ ] K-Nearest Neighbors for Regression
-- [ ] Support Vector Regression
-- [ ] Gaussian Regression
-- [ ] Polynomial Regression
+### A. Classification
+1. Logistic Regression
+2. Naive Bayes
+3. [**K-Nearest Neighbors (KNN)**](classification/KNN.py)
+    - [x] Initialize naive algorithm for KNN.
+    - [ ] Write document-in-code.
+    - [ ] Optimize alogirthm with better method of storing data: `BallTree` and  `KDTree`.
+4. Decision Tree
+5. Support Vector Machine (SVM)
+6. Random Forest
+7. Softmax Regression
 
-### Clustering
-- [ ] K-Means
-- [ ] DBSCAN
-- [ ] Mean Shift
-- [ ] OPTICS
-- [ ] Spectral Clustering
-- [ ] Mixture of Gaussians
-- [ ] Affinity Propagation
-- [ ] Agglomerative Clustering
-- [ ] BIRCH
+### B. Regression
+1. [**Linear Regression**](regression/LinearRegression.py)
+      - [x] Update `fit()` and `predict()` method, add `intercept` and `coefficient` attribute.
+      - [x] Write document-in-code.
+2. Ridge Regression
+3. Lasso Regression
+4. Decision Tree for Regression
+5. Random Forest for Regression
+6. K-Nearest Neighbors for Regression
+7. Support Vector Regression
+8. Gaussian Regression
+9. Polynomial Regression
 
-### Dimensionality reduction
-- [x] Principal Components Analysis (PCA)
-    - *06 Nov, 2022*: Initialize algorithm
-- [ ] Factor Analysis (FA)
-- [ ] Linear Discriminant Analysis (LDA)
-- [ ] Truncated SVD
-- [ ] Kernel PCA
-- [ ] t-Distributed Stochastic Neighbor Embedding (t-SNE)
-- [ ] Multidimensional Scaling (MDS)
-- [ ] Isomap
+### C. Clustering
+1. [**K-Means**](cluster/KMeans.py)
+    - [x] Initialize algorithm with naive brute-force method.
+    - [x] Optimize initialized centroids method with `K-Means++`
+    - [x] Write document-in-code
+2. DBSCAN
+3. Mean Shift
+4. OPTICS
+5. Spectral Clustering
+6. Mixture of Gaussians
+7. Affinity Propagation
+8. Agglomerative Clustering
+9. BIRCH
+
+### D. Dimensionality reduction
+1. [**Principal Components Analysis (PCA)**](decomposition/PCA.py)
+    - [x] Initialize algorithm
+2. Factor Analysis (FA)
+3. Linear Discriminant Analysis (LDA)
+4. Truncated SVD
+5. Kernel PCA
+6. t-Distributed Stochastic Neighbor Embedding (t-SNE)
+7. Multidimensional Scaling (MDS)
+8. Isomap
