@@ -10,7 +10,7 @@ class LinearRegression:
         :param
             random_init : bool
                 set the permanent random or not
-        :attribute
+        :attributes
             coef_ : np.ndarray
                 the coefficient
             intercept_ : float

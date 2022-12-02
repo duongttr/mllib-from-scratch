@@ -1,99 +1,163 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import sys
-sys.path.append('../')
-from utils.metrics import accuracy
+from typing import Union, List
 
 class LogisticRegression:
-    def __init__(self, epsilon=1e-8, random_state: int = None) -> None:
-        np.random.seed(random_state)
-        self.epsilon = epsilon
+    def __init__(self, random_state: bool=True) -> None:
+        """Classification data into 2 class
+        :param
+            random_init : bool
+                set the permanent random or not
+        :attributes
+            coef_ : np.ndarray
+                coefficient of the features in the decision function
+            intercept_ : float
+                intercept of the features in the decision function
+        """
+        if random_state: np.random.seed(99)
         
+        self.intercept_ = None
+        self.coef_ = None
 
-    def linear_forward(self, X, theta):
-        return X@theta
+    def __calculate(self, X: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+        """calculate parameters
+        :param
+            X : np.ndarray
+                training vector
+        :return
+            logits : np.ndarray
+                linear forward of X and theta (weights)
+            y_pred : np.ndarray
+                sigmoid forward of logits
+            dW : np.ndarray
+                derivative of logits (linear backward)
+            dy_pred : np.ndarray
+                derivative of sigmoid_forward (sigmoid backward)
+        """
+        logits = X@self.theta
+        y_pred = 1 / (1+np.exp(-logits))
+        dW = X
+        dy_pred = y_pred*(1-y_pred)
+        return logits, y_pred, dW, dy_pred
 
-    def linear_backward(self, X):
-        return X
+    def __binary_cross_entropy(self, y: np.ndarray, y_pred: np.ndarray) -> tuple[float, np.ndarray]:
+        """Calculate the binary cross entropy loss and derivative of its
+        :param
+            y : np.ndarray
+                vector label
+            y_pred : np.ndarray
+                vector predict from the sigmoid function
+        :return
+            mean_loss : float
+                number to measure the different between label and prediction 
+            dy_loss : np.ndarray
+                derivation of loss vector
+        """
+        epsilon = 1e-9
+        pos_y_pred = y_pred+epsilon
+        neg_y_pred = 1-y_pred+epsilon
+        loss = -(y*(np.log(pos_y_pred) + (1-y)*np.log(neg_y_pred)))
+        mean_loss = sum(loss) / self.batch
 
-    def sigmoid_forward(self, Z):
-        return 1 / (1+np.exp(-Z))
-
-    def sigmoid_backward(self, X):
-        return X*(1-X)
-
-    def binary_cross_entropy(self, y, y_pred, batch_size):
-        y_pos = np.min(np.concatenate([y_pred + self.epsilon, np.ones_like(y_pred)],axis=1))
-        y_neg = np.min(np.concatenate([1-y_pred + self.epsilon, np.ones_like(y_pred)],axis=1))
-        loss = -(y*np.log(y_pos) + (1-y)*np.log(1-y_neg))
-        mean_loss = loss.sum() / batch_size
-        print(y_pred)
-        dy_loss = -(y/y_pred - (1-y)/(1-y_pred)) / batch_size
+        dy_loss = -(y/pos_y_pred - (1-y)/(neg_y_pred)) / self.batch
         return mean_loss, dy_loss
 
-    def __shuffle_index(self, x):
-        return np.random.permutation(x.shape[0])
+    def __shuffle(self, X: np.ndarray, y: np.ndarray, shape: int) -> tuple[np.ndarray, np.ndarray]:
+        """Shuffle the training vector and labels of them
+        :param
+            X : np.ndarray
+                old training vector
+            y : np.ndarray
+                old labels
+        :return
+            X : np.ndarray
+                shuffled training vector
+            y: np.ndarray
+                shuffled labels
+        """
+        shuffle =  np.random.permutation(shape)
+        return X[shuffle], y[shuffle]
 
-    def fit(self, x, y, learning_rate, epochs, batch):
-        self.theta = np.random.rand(x.shape[1], 1)
-        self.loss_graph = []
-        for ith_epoch in range(epochs):
-            shuffle = self.__shuffle_index(x)
-            x, y = x[shuffle], y[shuffle]
-            for ith_batch in range(0, x.shape[0], batch):
-                logits = self.linear_forward(x[ith_batch:ith_batch+batch, :], self.theta)
-                y_pred = self.sigmoid_forward(logits)
+    def fit(self, X: Union[np.ndarray, List[List]], y: Union[np.ndarray, List], learning_rate: float=0.001, epoch: int=1000, batch: int=64) -> None:
+        """training to get weights fit with input and labels
+        :param
+            X : np.ndarray, List[List]
+                training matrix
+            y : np.ndarray, List
+                target vector relative to X
+            learning_rate : float
+                learning rate of each step training
+            epoch : int
+                iteration of training
+            batch : int
+                number of features get in each step
+        """
+        X, y = np.array(X), np.array(y)
+        assert np.ndim(X)==2, Exception('the ndim of X must be 2')
+        # assert np.ndim(y)==1, Exception('ndim of y must be 1')
+        assert X.shape[0]==y.shape[0], Exception('x and y must have the same size')
 
-                loss, dy_loss = self.binary_cross_entropy(y[ith_batch:ith_batch+batch, :], y_pred, batch)
-                linear_backward = self.linear_backward(x[ith_batch:ith_batch+batch, :])
-                sigmoid_backward = self.sigmoid_backward(y_pred)
+        self.batch = batch
+        height, weight = X.shape
+        self.theta = np.random.rand(weight, 1)
+        loss_history = [1e8]
+        for _ in range(epoch):
+            X, y = self.__shuffle(X, y, height)
+            for ith_batch in range(0, height, batch):
+                _, y_pred, dW, dy_pred = self.__calculate(X[ith_batch:ith_batch+batch, :])
+                loss, dy_loss = self.__binary_cross_entropy(y[ith_batch:ith_batch+batch, :], y_pred)
 
-                dtheta = dy_loss*sigmoid_backward*linear_backward
-                dtheta_mean = np.mean(dtheta, axis=0, keepdims=True).T
-                self.theta -= learning_rate*dtheta_mean
+                if loss < loss_history[-1]:
+                    grad = dy_loss*dy_pred*dW
+                    grad_mean = np.mean(grad, axis=0, keepdims=True).T
+                    self.theta -= learning_rate*grad_mean
 
-            if ith_epoch%10 == 0:
-                print(f'Loss of {ith_epoch} is: {loss}')
-            self.loss_graph.append(loss)
+                    loss_history.append(loss)
+        loss_history.pop(0)
 
-    def predict_proba(self, X):
-        logits = self.linear_forward(X, self.theta)
-        print(X.shape, self.theta.shape)
-        return self.sigmoid_forward(logits)
-    
-    def predict_labels(self, X, threshold=0.5):
-        proba = self.predict_proba(X)
-        return np.array(proba >= threshold, dtype='int')
-        
+        self.intercept_, self.coef_ = self.theta[0], self.theta[1:]
 
+    def predict(self, X: Union[np.ndarray, List[List]], threshold: float=0.5) -> np.ndarray:
+        """Predict input value to suitable class
+        :param
+            X : np.ndarray, List[List]
+                the data maxtrix for which we want to predict
+            threshold : float
+                the threshold to seperate the input to which class
+        :return
+            np.ndarray : predictive class for input value
+        """
+        X = np.array(X)
+        assert np.ndim(X)==2, Exception('ndim of X must be 2')
 
+        _, y_pred, _, _ = self.__calculate(X)
+        return np.where(y_pred <= threshold, 0, 1)
 
-                
-N = 500
-mu, sigma = 0, 1
-x_0 = np.random.normal(mu, sigma, N)
-x_1 = np.random.normal(mu + 100, sigma, N)
-print(x_1)
+    def predict_proba(self, X: Union[np.ndarray, List[List]]) -> np.ndarray:
+        """Predict probability of class 1 in input value
+        :param
+            X : np.ndarray, List[List]
+                the data matrix for which we want to predict
+        :return
+            np.ndarray
+                vector contain probability of correspond input value
+        """
+        X = np.array(X)
+        assert np.dim(X)==2, Exception('ndim of X must be 2')
 
-X = [x_0, x_1]
-Y = [np.zeros_like(x_0), np.ones_like(x_1)]
+        _, y_pred, _, _ = self.__calculate(X)
+        return y_pred
 
-X, Y = np.concatenate(X), np.concatenate(Y)
-
-
-X, Y = np.reshape(X, (-1, 1)), np.reshape(Y, (-1, 1))
-
-ones = np.ones((X.shape[0], 1))
-X = np.concatenate((ones, X), axis=1)
-
-epochs = 1000
-lr = 0.0001
-batch = 32
-
-reg = LogisticRegression(random_state=True)
-reg.fit(X, Y, lr, epochs, batch)
-
-y_pred_label = reg.predict_labels(X, threshold=0.8)
-y = Y
-print(accuracy(y, y_pred_label))
-        
+    def score(self, X: Union[np.ndarray, List[List]], y: Union[np.ndarray, List], threshold: float=0.5) -> float:
+        """Return the mean accuracy on the given test data and labels
+        :param
+            X : np.ndarray, List[List]
+                training matrix
+            y : np.ndarray, List
+                labels of training matrix
+            threshold : float
+                the threshold to seperate the input to which class
+        :return
+            float : themMean accuracy of self.predict(X)
+        """
+        y_pred = self.predict(X, threshold=threshold)
+        return np.mean(y==y_pred)

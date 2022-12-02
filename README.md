@@ -20,9 +20,9 @@ One thing you need to know that, I make this project **just for learning and und
 ### A. Classification
 1. [**Logistic Regression**](classification/LogisticRegression.py)
     - [x] Initialize logistic regression.
-    - [ ] Add score metrics.
-    - [ ] "Save best theta only" feature.
-    - [ ] Write document-in-code.
+    - [x] Add score metrics.
+    - [x] "Save best theta only" feature.
+    - [x] Write document-in-code.
 2. Naive Bayes
 3. [**K-Nearest Neighbors (KNN)**](classification/KNN.py)
     - [x] Initialize naive algorithm for KNN.
