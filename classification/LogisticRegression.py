@@ -23,12 +23,12 @@ class LogisticRegression:
         return X*(1-X)
 
     def binary_cross_entropy(self, y, y_pred, batch_size):
-        y_pos = np.min(np.concatenate([y_pred + self.epsilon, np.ones_like(y_pred)],axis=1))
-        y_neg = np.min(np.concatenate([1-y_pred + self.epsilon, np.ones_like(y_pred)],axis=1))
+        y_pos = y_pred + self.epsilon
+        y_neg = 1-y_pred + self.epsilon
         loss = -(y*np.log(y_pos) + (1-y)*np.log(1-y_neg))
         mean_loss = loss.sum() / batch_size
-        print(y_pred)
-        dy_loss = -(y/y_pred - (1-y)/(1-y_pred)) / batch_size
+
+        dy_loss = -(y/(self.epsilon + y_pred) - (1-y)/(self.epsilon + 1-y_pred)) / batch_size
         return mean_loss, dy_loss
 
     def __shuffle_index(self, x):
@@ -43,7 +43,6 @@ class LogisticRegression:
             for ith_batch in range(0, x.shape[0], batch):
                 logits = self.linear_forward(x[ith_batch:ith_batch+batch, :], self.theta)
                 y_pred = self.sigmoid_forward(logits)
-
                 loss, dy_loss = self.binary_cross_entropy(y[ith_batch:ith_batch+batch, :], y_pred, batch)
                 linear_backward = self.linear_backward(x[ith_batch:ith_batch+batch, :])
                 sigmoid_backward = self.sigmoid_backward(y_pred)
@@ -58,7 +57,6 @@ class LogisticRegression:
 
     def predict_proba(self, X):
         logits = self.linear_forward(X, self.theta)
-        print(X.shape, self.theta.shape)
         return self.sigmoid_forward(logits)
     
     def predict_labels(self, X, threshold=0.5):
@@ -73,7 +71,6 @@ N = 500
 mu, sigma = 0, 1
 x_0 = np.random.normal(mu, sigma, N)
 x_1 = np.random.normal(mu + 100, sigma, N)
-print(x_1)
 
 X = [x_0, x_1]
 Y = [np.zeros_like(x_0), np.ones_like(x_1)]
@@ -87,10 +84,10 @@ ones = np.ones((X.shape[0], 1))
 X = np.concatenate((ones, X), axis=1)
 
 epochs = 1000
-lr = 0.0001
+lr = 0.00001
 batch = 32
 
-reg = LogisticRegression(random_state=True)
+reg = LogisticRegression()
 reg.fit(X, Y, lr, epochs, batch)
 
 y_pred_label = reg.predict_labels(X, threshold=0.8)
