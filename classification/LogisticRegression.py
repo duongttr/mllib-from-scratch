@@ -99,20 +99,26 @@ class LogisticRegression:
         self.batch = batch
         height, weight = X.shape
         self.theta = np.random.rand(weight, 1)
-        loss_history = [1e8]
+        loss_history = []
+        min_loss = float('inf')
         for _ in range(epoch):
             X, y = self.__shuffle(X, y, height)
             for ith_batch in range(0, height, batch):
                 _, y_pred, dW, dy_pred = self.__calculate(X[ith_batch:ith_batch+batch, :])
                 loss, dy_loss = self.__binary_cross_entropy(y[ith_batch:ith_batch+batch, :], y_pred)
 
-                if loss < loss_history[-1]:
-                    grad = dy_loss*dy_pred*dW
-                    grad_mean = np.mean(grad, axis=0, keepdims=True).T
-                    self.theta -= learning_rate*grad_mean
+                loss_history.append(loss)
 
-                    loss_history.append(loss)
-        loss_history.pop(0)
+                grad = dy_loss*dy_pred*dW
+                grad_mean = np.mean(grad, axis=0, keepdims=True).T
+                self.theta -= learning_rate*grad_mean
+                
+            if loss_history[-1] < min_loss:
+                best_theta = self.theta
+                min_loss = loss_history[-1]
+        choice = int(input(f"(1) Current theta: {loss_history[-1]}\n(2) Best theta: {min_loss}\nType the option you want (1, 2): "))
+        if choice == 2:
+            self.theta = best_theta
 
         self.intercept_, self.coef_ = self.theta[0], self.theta[1:]
 
