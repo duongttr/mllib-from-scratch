@@ -10,23 +10,15 @@ One thing you need to know that, I make this project **just for learning and und
 ## 👤 Contributors
 **I would like to express my sincere thanks to the these wonderful people who have contributed to this library with me:**
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 <table>
   <tbody>
     <tr>
       <td align="center"><a href="http://duongttr.github.io"><img src="https://avatars.githubusercontent.com/u/34759421?v=4?s=100" width="100px;" alt="Duong Tran Thanh"/><br /><sub><b>Duong Tran Thanh</b></sub></a><br /><a href="#mentoring-duongttr" title="Mentoring">🧑‍🏫</a></td>
-      <td align="center"><a href="https://github.com/tanthinhdt"><img src="https://avatars.githubusercontent.com/u/76445277?v=4?s=100" width="100px;" alt="Thinhdt"/><br /><sub><b>Thinhdt</b></sub></a><br /><a href="https://github.com/AI-Coffee/mllib-from-scratch/commits?author=tanthinhdt" title="Code">💻</a></td>
-      <td align="center"><a href="https://github.com/pphuc25"><img src="https://avatars.githubusercontent.com/u/81808312?v=4?s=100" width="100px;" alt="Thinhdt"/><br /><sub><b>Thinhdt</b></sub></a><br /><a href="https://github.com/AI-Coffee/mllib-from-scratch/commits?author=pphuc25" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/tanthinhdt"><img src="https://avatars.githubusercontent.com/u/76445277?v=4?s=100" width="100px;" alt="Thinh Duong Tan"/><br /><sub><b>Thinh Duong Tan</b></sub></a><br /><a href="https://github.com/AI-Coffee/mllib-from-scratch/commits?author=tanthinhdt" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/pphuc25"><img src="https://avatars.githubusercontent.com/u/81808312?v=4?s=100" width="100px;" alt="Phuc Phan Van"/><br /><sub><b>Phuc Phan Van</b></sub></a><br /><a href="https://github.com/AI-Coffee/mllib-from-scratch/commits?author=pphuc25" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 
 ## 📝 Libraries
