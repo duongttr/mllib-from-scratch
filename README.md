@@ -15,15 +15,13 @@ One thing you need to know that, I make this project **just for learning and und
 </a>
 
 
-## 📝 TODO Lists
+
+## 📝 Libraries
 
 ### A. Classification
-1. Logistic Regression
+1. [**Logistic Regression**](classification/LogisticRegression.py)
 2. Naive Bayes
 3. [**K-Nearest Neighbors (KNN)**](classification/KNN.py)
-  - [x] Initialize naive algorithm for KNN.
-  - [ ] Write document-in-code.
-  - [ ] Optimize alogirthm with better method of storing data: `BallTree` and  `KDTree`.
 4. Decision Tree
 5. Support Vector Machine (SVM)
 6. Random Forest
