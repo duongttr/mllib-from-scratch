@@ -15,15 +15,12 @@ One thing you need to know that, I make this project **just for learning and und
 </a>
 
 
-## 📝 TODO Lists
+## 📝 Libraries
 
 ### A. Classification
-1. Logistic Regression
+1. [**Logistic Regression**](classification/LogisticRegression.py)
 2. Naive Bayes
 3. [**K-Nearest Neighbors (KNN)**](classification/KNN.py)
-  - [x] Initialize naive algorithm for KNN.
-  - [ ] Write document-in-code.
-  - [ ] Optimize alogirthm with better method of storing data: `BallTree` and  `KDTree`.
 4. Decision Tree
 5. Support Vector Machine (SVM)
 6. Random Forest
@@ -31,8 +28,6 @@ One thing you need to know that, I make this project **just for learning and und
 
 ### B. Regression
 1. [**Linear Regression**](regression/LinearRegression.py)
-      - [x] Update `fit()` and `predict()` method, add `intercept` and `coefficient` attribute.
-      - [x] Write document-in-code.
 2. Ridge Regression
 3. Lasso Regression
 4. Decision Tree for Regression
@@ -44,9 +39,6 @@ One thing you need to know that, I make this project **just for learning and und
 
 ### C. Clustering
 1. [**K-Means**](cluster/KMeans.py)
-    - [x] Initialize algorithm with naive brute-force method.
-    - [x] Optimize initialized centroids method with `K-Means++`
-    - [x] Write document-in-code
 2. DBSCAN
 3. Mean Shift
 4. OPTICS
@@ -58,7 +50,6 @@ One thing you need to know that, I make this project **just for learning and und
 
 ### D. Dimensionality reduction
 1. [**Principal Components Analysis (PCA)**](decomposition/PCA.py)
-    - [x] Initialize algorithm
 2. Factor Analysis (FA)
 3. Linear Discriminant Analysis (LDA)
 4. Truncated SVD
