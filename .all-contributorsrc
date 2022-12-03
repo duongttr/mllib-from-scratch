@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "pphuc25",
+      "name": "Phuc Van Phan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81808312?v=4",
+      "profile": "https://github.com/pphuc25",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "mllib-from-scratch",
+  "projectOwner": "AI-Coffee"
+}
