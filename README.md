@@ -18,7 +18,9 @@ One thing you need to know that, I make this project **just for learning and und
 ## 📝 TODO Lists
 
 ### A. Classification
-1. Logistic Regression
+1. [**Logistic Regression**](classification/LogisticRegression.py)
+    - [x] Initialize algorithm.
+    - [x] Write document-in-code.
 2. Naive Bayes
 3. [**K-Nearest Neighbors (KNN)**](classification/KNN.py)
     - [x] Initialize naive algorithm for KNN.
