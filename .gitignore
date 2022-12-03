@@ -1,4 +1,9 @@
 .DS_Store
+
+# Unuploaded folders/files
+figs/
+.idea/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
