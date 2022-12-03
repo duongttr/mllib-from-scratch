@@ -1,4 +1,7 @@
 <h1 align="center"> Machine Learning Library from Scratch with Python</h1>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## 👋 Introduction
 
@@ -13,6 +16,13 @@ One thing you need to know that, I make this project **just for learning and und
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/pphuc25"><img src="https://avatars.githubusercontent.com/u/81808312?v=4?s=100" width="100px;" alt="Phuc Van Phan"/><br /><sub><b>Phuc Van Phan</b></sub></a><br /><a href="https://github.com/AI-Coffee/mllib-from-scratch/commits?author=pphuc25" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -62,3 +72,16 @@ One thing you need to know that, I make this project **just for learning and und
 6. t-Distributed Stochastic Neighbor Embedding (t-SNE)
 7. Multidimensional Scaling (MDS)
 8. Isomap
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
