@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "duongttr",
+      "name": "Duong Tran Thanh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34759421?v=4",
+      "profile": "http://duongttr.github.io",
+      "contributions": [
+        "mentoring"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "mllib-from-scratch",
+  "projectOwner": "AI-Coffee"
+}
