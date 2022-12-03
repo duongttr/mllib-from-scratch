@@ -1,6 +1,6 @@
 <h1 align="center"> Machine Learning Library from Scratch with Python</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## 👋 Introduction
@@ -20,6 +20,7 @@ One thing you need to know that, I make this project **just for learning and und
   <tbody>
     <tr>
       <td align="center"><a href="http://duongttr.github.io"><img src="https://avatars.githubusercontent.com/u/34759421?v=4?s=100" width="100px;" alt="Duong Tran Thanh"/><br /><sub><b>Duong Tran Thanh</b></sub></a><br /><a href="#mentoring-duongttr" title="Mentoring">🧑‍🏫</a></td>
+      <td align="center"><a href="https://github.com/tanthinhdt"><img src="https://avatars.githubusercontent.com/u/76445277?v=4?s=100" width="100px;" alt="Thinhdt"/><br /><sub><b>Thinhdt</b></sub></a><br /><a href="https://github.com/AI-Coffee/mllib-from-scratch/commits?author=tanthinhdt" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
