@@ -21,15 +21,9 @@ One thing you need to know that, I make this project **just for learning and und
 1. Logistic Regression
 2. Naive Bayes
 3. [**K-Nearest Neighbors (KNN)**](classification/KNN.py)
-<<<<<<< HEAD
   - [x] Initialize naive algorithm for KNN.
   - [ ] Write document-in-code.
   - [ ] Optimize alogirthm with better method of storing data: `BallTree` and  `KDTree`.
-=======
-    - [x] Initialize naive algorithm for KNN.
-    - [ ] Write document-in-code.
-    - [ ] Optimize alogirthm with better method of storing data: `BallTree` and  `KDTree`.
->>>>>>> 512be4b97ea274790b3572e3bc04cdd599b048b3
 4. Decision Tree
 5. Support Vector Machine (SVM)
 6. Random Forest
@@ -71,8 +65,4 @@ One thing you need to know that, I make this project **just for learning and und
 5. Kernel PCA
 6. t-Distributed Stochastic Neighbor Embedding (t-SNE)
 7. Multidimensional Scaling (MDS)
-<<<<<<< HEAD
 8. Isomap
-=======
-8. Isomap
->>>>>>> 512be4b97ea274790b3572e3bc04cdd599b048b3
