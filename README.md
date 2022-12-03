@@ -13,6 +13,15 @@ One thing you need to know that, I make this project **just for learning and und
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="http://duongttr.github.io"><img src="https://avatars.githubusercontent.com/u/34759421?v=4?s=100" width="100px;" alt="Duong Tran Thanh"/><br /><sub><b>Duong Tran Thanh</b></sub></a><br /><a href="#mentoring-duongttr" title="Mentoring">🧑‍🏫</a></td>
+      <td align="center"><a href="https://github.com/tanthinhdt"><img src="https://avatars.githubusercontent.com/u/76445277?v=4?s=100" width="100px;" alt="Thinhdt"/><br /><sub><b>Thinhdt</b></sub></a><br /><a href="https://github.com/AI-Coffee/mllib-from-scratch/commits?author=tanthinhdt" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/pphuc25"><img src="https://avatars.githubusercontent.com/u/81808312?v=4?s=100" width="100px;" alt="Thinhdt"/><br /><sub><b>Thinhdt</b></sub></a><br /><a href="https://github.com/AI-Coffee/mllib-from-scratch/commits?author=pphuc25" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -62,3 +71,16 @@ One thing you need to know that, I make this project **just for learning and und
 6. t-Distributed Stochastic Neighbor Embedding (t-SNE)
 7. Multidimensional Scaling (MDS)
 8. Isomap
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
