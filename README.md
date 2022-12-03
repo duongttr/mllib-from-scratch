@@ -10,9 +10,14 @@ One thing you need to know that, I make this project **just for learning and und
 ## 👤 Contributors
 **I would like to express my sincere thanks to the these wonderful people who have contributed to this library with me:**
 
-<a href="https://github.com/AI-Coffee/mllib-from-scratch/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=AI-Coffee/mllib-from-scratch" />
-</a>
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 
 ## 📝 Libraries
