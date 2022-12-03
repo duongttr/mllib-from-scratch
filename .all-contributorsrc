@@ -14,6 +14,15 @@
       "contributions": [
         "mentoring"
       ]
+    },
+    {
+      "login": "tanthinhdt",
+      "name": "Thinhdt",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76445277?v=4",
+      "profile": "https://github.com/tanthinhdt",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
