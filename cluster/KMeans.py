@@ -65,14 +65,15 @@ class KMeans:
         assert X.ndim == 2, Exception('Dim must be 2')
         # Init best loss, best labels
         centroids, best_labels, best_loss = self.kmeans(X)
+        self
         # Run algorithm
         for _ in range(1, self.n_init):
             centroids, labels, loss = self.kmeans(X)
             # Choose centroids that loss is minimum
             if best_loss > loss:
                 best_loss = loss
-                self._centroids = centroids
-                best_labels = labels
+                self._centroids = np.copy(centroids)
+                best_labels = np.copy(labels)
         print(best_loss)
         # Visualize
         if visualized:
@@ -80,7 +81,7 @@ class KMeans:
                 'Data is too complicated to be visualized')
             self.plot(X, best_labels, best_loss)
 
-    def kmeans(self, X: np.ndarray) -> tuple:
+    def kmeans(self, X: np.ndarray) -> Union[np.ndarray, np.ndarray, float]:
         """Run K-Means algorithm
 
         Parameters
@@ -111,7 +112,8 @@ class KMeans:
             for i in range(self._n_clusters):
                 related_points_idx = np.where(labels == i)[0]
                 related_points = X[related_points_idx]
-                centroids[i] = np.mean(related_points, axis=0)
+                if len(related_points) > 0:
+                    centroids[i] = np.mean(related_points, axis=0)
             # Check if it converges
             if loss - cur_loss < self._tol:
                 cur_loss = loss
@@ -167,7 +169,7 @@ class KMeans:
                 c=colors)
         plt.show()
 
-    def predict(self, X: np.ndarray, centroids: np.ndarray) -> tuple:
+    def predict(self, X: np.ndarray, centroids: np.ndarray) -> (np.ndarray, float):
         """Predict which centroid (label) of each datapoint, and calculate loss.
 
         Parameters
