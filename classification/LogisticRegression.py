@@ -1,6 +1,7 @@
 import numpy as np
 from typing import Union, List
 
+
 class LogisticRegression:
     def __init__(self, random_state: int=None, save_best_option: bool=True) -> None:
         """
