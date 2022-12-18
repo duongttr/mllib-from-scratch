@@ -10,9 +10,9 @@ One thing you need to know that, I make this project **just for learning and und
 ## 👤 Contributors
 **I would like to express my sincere thanks to the these wonderful people who have contributed to this library with me:**
 
-- [Duong-Tran Thanh
-- Phuc-Phan Van
-- Thinh-Duong Tan
+- [**Duong**-Tran Thanh]()
+- [**Phuc**-Phan Van]()
+- [**Thinh**-Duong Tan]()
 
 
 ## 📝 Libraries
