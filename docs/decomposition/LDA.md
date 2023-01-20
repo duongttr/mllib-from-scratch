@@ -65,5 +65,7 @@ If you want to know more about mathematics behind, you should take a look at ref
 
 ## References
 https://machinelearningcoban.com/2017/06/30/lda/
+
 https://en.wikipedia.org/wiki/Linear_discriminant_analysis
+
 https://towardsdatascience.com/linear-discriminant-analysis-explained-f88be6c1e00b
