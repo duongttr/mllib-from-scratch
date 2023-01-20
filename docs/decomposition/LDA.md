@@ -36,6 +36,7 @@ Calculate "within-class" scatter matrix of each class, a sum up all of them:
 $$
 S_W = \sum_i^{C}(X_i - \mu_i)^2
 $$
+
 Calculate "between-class" scatter matrix:
 
 $$
