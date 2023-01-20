@@ -26,20 +26,24 @@ $$
 
 ### Step 2: With each class, calculate "within-class" scatter matrix and "between-class" scatter matrix
 Suppose that $X_c$ is a subset of sample of class $c$, size of subset is $N_c$.
+
 $$
 \mu_c = \frac{1}{N_c}\sum_{j=0}^{F}\sum_{i=0}^{N_c}{X_{i:j}}
 $$
 
 Calculate "within-class" scatter matrix of each class, a sum up all of them:
+
 $$
 S_W = \sum_i^{C}(X_i - \mu_i)^2
 $$
 Calculate "between-class" scatter matrix:
+
 $$
 S_B = \sum_i^{C} N_i * (\mu_i - \mu)^2
 $$
 
 ### Step 3: Calculate target
+
 $$
 T = S_W^{-1} S_B
 $$
@@ -47,9 +51,11 @@ $$
 For short, we need to maximize $T$, or $S_B$ must to be maximum and $S_W$ must to be minimum.
 
 ### Step 4: Calculate eigen-components of target
+
 $$
 V,E=eigen(A)
 $$
+
 Where $V$ is eigenvalues, and $E$ is eigenvectors.
 
 ### Step 5: Sort the eigenvectors due to eigenvalues, and transform $X$ by $E$.
