@@ -5,17 +5,40 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
 class LDA:
     def __init__(self, n_components: int = None):
-        """
+        """Linear Discriminant Analysis (LDA)
+        LDAs are a supervised dimensionality reduction technique.
+        
         Parameters:
+        ----------
         - `n_components (int)`: number of components
         """
         if n_components is not None:
             assert n_components > 0, "Number of components must be greater than 0"
         self.n_components = n_components
-        self.linear_discriminants = None
         
     
     def fit(self, X: Union[List, np.ndarray], y: Union[List, np.ndarray]):
+        """
+        Fit LDA
+        
+        Parameters:
+        ----------
+        X (np.ndarray):
+            Inputs to fit LDA
+        y (np.ndarray):
+            Target values (labels)
+            
+        Attributes:
+        ----------
+        explained_variance (np.ndarray):
+            The amount of variance explained by each of the selected components.
+        
+        explained_variance_ratio (np.ndarray):
+            Percentage of variance explained by each of the selected components.
+            
+        ld (np.ndarray):
+            Linear discriminants in feature space, representing the directions of maximum separation between classes in the data.
+        """
         X = np.array(X, dtype=np.float32)
         y = np.array(y)
         
@@ -49,11 +72,33 @@ class LDA:
         A = np.linalg.inv(SW).dot(SB)
         evals, evecs = np.linalg.eigh(A)
         evecs = evecs[:, np.argsort(evals)[::-1]]
+        
+        self.explained_variance = evals[:self.n_components]
+        self.explained_variance_ratio = self.explained_variance / evals.sum()
         self.ld = evecs[:, :self.n_components]
         
-    def transform(self, X: Union[List, np.ndarray]): 
+    def transform(self, X: Union[List, np.ndarray]):
+        """
+        Transform data
+        
+        Parameters:
+        ----------
+        X (np.ndarray):
+            Inputs to transform
+        """
         return X @ self.ld
     
     def fit_transform(self, X: Union[List, np.ndarray], y: Union[List, np.ndarray]):
+        """
+        Fit and transform data
+        
+        Parameters:
+        ----------
+        X (np.ndarray):
+            Inputs to fit and transform
+        
+        y (np.ndarray):
+            Target values (labels)
+        """
         self.fit(X, y)
         return self.transform(self, X)
