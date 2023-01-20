@@ -10,24 +10,24 @@ One thing you need to know that, I make this project **just for learning and und
 ## 👤 Contributors
 **I would like to express my sincere thanks to the these wonderful people who have contributed to this library with me:**
 
-- [**Duong**-Tran Thanh]()
-- [**Phuc**-Phan Van]()
-- [**Thinh**-Duong Tan]()
+- Duong T. (owner)
+- Phuc P. (contributor)
+- Thinh T. (contributor)
 
 
 ## 📝 Libraries
 
 ### A. Classification
-1. [**Logistic Regression**](classification/LogisticRegression.py)
-2. Naive Bayes
-3. [**K-Nearest Neighbors (KNN)**](classification/KNN.py)
-4. Decision Tree
-5. Support Vector Machine (SVM)
+1. **Logistic Regression** | Document, [Code](classification/LogisticRegression.py)
+2. **Naive Bayes**| Document, [Code](classification/KNN.py)
+3. **K-Nearest Neighbors (KNN)** | Document, [Code](classification/KNN.py)
+4. **Decision Tree** | Document, [Code](classification/DecisionTreeClassifier.py)
+5. **Support Vector Machine (SVM)** | Document, [Code](classification/SupportVectorMachine.py)
 6. Random Forest
 7. Softmax Regression
 
 ### B. Regression
-1. [**Linear Regression**](regression/LinearRegression.py)
+1. **Linear Regression** | Document, [Code](regression/LinearRegression.py)
 2. Ridge Regression
 3. Lasso Regression
 4. Decision Tree for Regression
@@ -38,7 +38,7 @@ One thing you need to know that, I make this project **just for learning and und
 9. Polynomial Regression
 
 ### C. Clustering
-1. [**K-Means**](cluster/KMeans.py)
+1. **K-Means** | Document, [Code](cluster/KMeans.py)
 2. DBSCAN
 3. Mean Shift
 4. OPTICS
@@ -49,9 +49,9 @@ One thing you need to know that, I make this project **just for learning and und
 9. BIRCH
 
 ### D. Dimensionality reduction
-1. [**Principal Components Analysis (PCA)**](decomposition/PCA.py)
-2. Factor Analysis (FA)
-3. Linear Discriminant Analysis (LDA)
+1. **Principal Components Analysis (PCA)** | Document, [Code](decomposition/PCA.py)
+2. **Factor Analysis (FA)** | Document, [Code](decomposition/FactorAnalysis.py)
+3. **Linear Discriminant Analysis (LDA)** | [Document](docs/decomposition/LDA.md), [Code](decomposition/LDA.py)
 4. Truncated SVD
 5. Kernel PCA
 6. t-Distributed Stochastic Neighbor Embedding (t-SNE)
